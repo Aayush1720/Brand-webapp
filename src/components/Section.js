@@ -1,20 +1,23 @@
 import React from 'react'
 import styled from 'styled-components';
+import Cars from '../data';
 
-function Section() {
+Cars.map(item => (console.log(item)))
+
+function Section({title , descryption , backgroundImg,leftBtnText,rightBtnText}) {
     return (
-            <Wrap>
+            <Wrap backgroundImg = {backgroundImg}>
             <ItemText>
-                <h2>Model S</h2>
-                <p> Order online for touchles delivery</p>
+                <h2>{title}</h2>
+                <p> {descryption}</p>
             </ItemText>
             <Buttons>
                 <ButtonGroup>
                     <LeftButton>
-                        Custom Order
+                        {leftBtnText}
                     </LeftButton>
                     <RightButton>
-                        Existing Inventory
+                        {rightBtnText}
                     </RightButton>
                 </ButtonGroup>
                 <DownArrow src = "/images/images/down-arrow.svg" />
@@ -38,9 +41,7 @@ const Wrap = styled.div`
     background-size : cover;
     background-position : center;
     background-repeat : no-repeat;
-    background-image :url(
-        'images/images/model-s.jpg'
-    )
+    background-image : ${props => `url("/images/images/${props.backgroundImg}")` }
     
  
 `

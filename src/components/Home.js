@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Section from './Section';
-
+import Cars from '../data';
 
 function Home() {
     return (
         <div>
-            <Section />
-            <Section />
+           { Cars.map(item => (
+                <Section {...item}/>
+            ))}
         </div>
     )
 }
