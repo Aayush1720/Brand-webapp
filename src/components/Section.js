@@ -1,27 +1,33 @@
 import React from 'react'
 import styled from 'styled-components';
 import Cars from '../data';
+import Fade from 'react-reveal/Fade';
 
 Cars.map(item => (console.log(item)))
 
 function Section({title , descryption , backgroundImg,leftBtnText,rightBtnText}) {
     return (
             <Wrap backgroundImg = {backgroundImg}>
+            <Fade bottom>
             <ItemText>
                 <h2>{title}</h2>
                 <p> {descryption}</p>
             </ItemText>
+            </Fade>
+            <Fade bottom>
             <Buttons>
-                <ButtonGroup>
-                    <LeftButton>
-                        {leftBtnText}
-                    </LeftButton>
-                    <RightButton>
-                        {rightBtnText}
-                    </RightButton>
-                </ButtonGroup>
+                    <ButtonGroup>
+                        <LeftButton>
+                            {leftBtnText}
+                        </LeftButton>
+                        <RightButton>
+                            {rightBtnText}
+                        </RightButton>
+                    </ButtonGroup>
                 <DownArrow src = "/images/images/down-arrow.svg" />
             </Buttons>
+            </Fade>
+               
             
         
             </Wrap>
@@ -32,7 +38,8 @@ function Section({title , descryption , backgroundImg,leftBtnText,rightBtnText})
 export default Section
  
 const Wrap = styled.div`
-       display : flex;
+    z-index : 10;
+    display : flex;
     flex-direction : column;
     justify-content : space-between;
     align-items : center; 
