@@ -2,6 +2,7 @@
   "name": "product",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3010",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
@@ -9,6 +10,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.21.1",
     "components": "^0.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

@@ -3,36 +3,33 @@ import styled from 'styled-components';
 import Cars from '../data';
 import Fade from 'react-reveal/Fade';
 
-Cars.map(item => (console.log(item)))
 
-function Section({title , descryption , backgroundImg,leftBtnText,rightBtnText}) {
+
+function Section({item}) {
     return (
-            <Wrap backgroundImg = {backgroundImg}>
+            <Wrap backgroundImg = {item.backgroundImg}>
             <Fade bottom>
             <ItemText>
-                <h2>{title}</h2>
-                <p> {descryption}</p>
+                <h2>{item.title}</h2>
+                <p> {item.descryption}</p>
             </ItemText>
             </Fade>
             <Fade bottom>
             <Buttons>
                     <ButtonGroup>
                         <LeftButton>
-                            {leftBtnText}
+                            {item.leftBtnText}
                         </LeftButton>
                         <RightButton>
-                            {rightBtnText}
+                            {item.rightBtnText}
                         </RightButton>
                     </ButtonGroup>
                 <DownArrow src = "/images/images/down-arrow.svg" />
             </Buttons>
             </Fade>
                
-            
-        
             </Wrap>
-        
-    )
+     )
 }
 
 export default Section
